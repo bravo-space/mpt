@@ -4,5 +4,7 @@
     "start:5173": "python3 -m http.server 5173",
     "start:5174": "python3 -m http.server 5174"
   },
-  "devDependencies": {}
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
 }
