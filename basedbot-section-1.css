@@ -1,0 +1,362 @@
+/*
+  BasedBot section #1 snapshot.
+  Saved reference of the earlier compact three-column card design.
+  Load this after styles.css to restore that section style.
+*/
+
+.platform-card.featured {
+  grid-template-columns: minmax(245px, 0.85fr) minmax(420px, 1.35fr) minmax(
+      225px,
+      0.72fr
+    );
+  grid-template-areas: "brand highlights action";
+  align-items: stretch;
+  justify-items: stretch;
+  gap: 0.75rem;
+  min-height: 0;
+  padding: 0.85rem;
+  text-align: left;
+  isolation: isolate;
+  border-color: rgba(70, 244, 213, 0.42);
+  background:
+    linear-gradient(115deg, rgba(70, 244, 213, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(125, 255, 104, 0.1), rgba(2, 4, 2, 0.86)),
+    #020402;
+}
+
+.platform-card.featured::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.58;
+  background:
+    linear-gradient(
+      95deg,
+      transparent 20%,
+      rgba(244, 248, 238, 0.1) 47%,
+      transparent 68%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(70, 244, 213, 0.09) 0 1px,
+      transparent 1px 10px
+    );
+  background-size:
+    190% 100%,
+    100% 100%;
+  animation: featured-panel-scan 6.2s linear infinite;
+}
+
+.platform-card.featured::after {
+  content: "";
+  position: absolute;
+  inset: auto 0.85rem 0.7rem;
+  z-index: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--cyan),
+    var(--yellow),
+    transparent
+  );
+  transform-origin: left center;
+  animation: featured-edge-pulse 3.5s ease-in-out infinite;
+}
+
+.platform-card.featured .featured-brand {
+  grid-area: brand;
+  grid-column: auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  justify-content: start;
+  gap: 0.85rem;
+  min-width: 0;
+  padding: 0.45rem 0.3rem;
+}
+
+.featured-logo-lockup {
+  position: relative;
+  width: 5.7rem;
+  padding-top: 0.85rem;
+}
+
+.featured-logo-link {
+  width: 5.7rem;
+  height: 5.7rem;
+}
+
+.featured-mini-crown {
+  width: 3.8rem;
+  height: 1.8rem;
+}
+
+.featured-kicker {
+  gap: 0.35rem;
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+}
+
+.featured-kicker span {
+  padding: 0.28rem 0.42rem;
+}
+
+.platform-card.featured h3 {
+  justify-content: flex-start;
+  margin: 0;
+  font-size: clamp(1.9rem, 3vw, 2.65rem);
+  line-height: 0.98;
+  text-align: left;
+}
+
+.platform-card.featured .platform-subtitle {
+  margin: 0.35rem 0 0;
+  color: #eef9ea;
+  font-size: 1rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.platform-card.featured .featured-highlights {
+  grid-area: highlights;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: center;
+  justify-items: stretch;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.platform-card.featured .featured-highlights li {
+  width: auto;
+  min-height: 4.15rem;
+  padding: 0.58rem 0.66rem 0.58rem 0.78rem;
+  border-left: 2px solid rgba(70, 244, 213, 0.82);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(70, 244, 213, 0.12),
+      rgba(244, 248, 238, 0.035)
+    ),
+    rgba(3, 4, 3, 0.38);
+  overflow: hidden;
+}
+
+.platform-card.featured .featured-highlights li:nth-child(2n) {
+  border-left-color: rgba(255, 224, 79, 0.9);
+}
+
+.platform-card.featured .featured-highlights li:nth-child(3n) {
+  border-left-color: rgba(255, 111, 97, 0.84);
+}
+
+.platform-card.featured .featured-highlights li::before {
+  display: none;
+}
+
+.platform-card.featured .featured-highlights strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.1;
+}
+
+.platform-card.featured .featured-highlights span {
+  display: block;
+  margin-top: 0.28rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.28;
+  text-align: left;
+}
+
+.platform-card.featured .featured-action-panel {
+  grid-area: action;
+  grid-column: auto;
+  display: grid;
+  align-content: center;
+  gap: 0.6rem;
+  min-width: 0;
+  padding-left: 0.7rem;
+  border-left: 1px solid rgba(70, 244, 213, 0.24);
+}
+
+.featured-action-panel p {
+  margin: 0;
+  color: var(--cyan);
+  font-size: 0.72rem;
+  font-weight: 950;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.featured-chain-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.34rem;
+}
+
+.featured-chain-strip span {
+  padding: 0.32rem 0.45rem;
+  border: 1px solid rgba(125, 255, 104, 0.22);
+  border-radius: 6px;
+  color: #e9ffe8;
+  background: rgba(125, 255, 104, 0.06);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.platform-card.featured .featured-chain-strip span:last-child {
+  color: #e9ffe8;
+  background: rgba(125, 255, 104, 0.06);
+  border-color: rgba(125, 255, 104, 0.22);
+}
+
+.platform-card.featured .featured-signup-button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 0.2rem;
+  padding: 0.65rem 0.85rem;
+  box-shadow: 0 12px 30px rgba(125, 255, 104, 0.18);
+}
+
+@keyframes featured-panel-scan {
+  0% {
+    background-position:
+      160% 0,
+      0 0;
+  }
+
+  100% {
+    background-position:
+      -60% 0,
+      0 0;
+  }
+}
+
+@keyframes featured-edge-pulse {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scaleX(0.72);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 980px) {
+  .platform-card.featured {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "highlights"
+      "action";
+    gap: 0.8rem;
+  }
+
+  .platform-card.featured .featured-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .platform-card.featured .featured-action-panel {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding-top: 0.75rem;
+    padding-left: 0;
+    border-top: 1px solid rgba(70, 244, 213, 0.24);
+    border-left: 0;
+  }
+
+  .featured-action-panel p {
+    grid-column: 1 / -1;
+  }
+
+  .platform-card.featured .featured-signup-button {
+    width: auto;
+    min-width: 13rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .platform-card.featured {
+    padding: 0.8rem;
+  }
+
+  .featured-signal-rails {
+    display: none;
+  }
+
+  .platform-card.featured .featured-brand {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.6rem;
+    padding: 0.2rem 0;
+    text-align: center;
+  }
+
+  .featured-logo-lockup,
+  .featured-logo-link {
+    width: 5rem;
+  }
+
+  .featured-logo-link {
+    height: 5rem;
+  }
+
+  .featured-mini-crown {
+    width: 3.3rem;
+  }
+
+  .featured-kicker {
+    justify-content: center;
+  }
+
+  .platform-card.featured h3 {
+    justify-content: center;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .platform-card.featured .platform-subtitle {
+    font-size: 0.98rem;
+    text-align: center;
+  }
+
+  .platform-card.featured .featured-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+
+  .platform-card.featured .featured-highlights li {
+    min-height: auto;
+    padding: 0.52rem 0.55rem;
+  }
+
+  .platform-card.featured .featured-action-panel {
+    grid-template-columns: 1fr;
+    gap: 0.58rem;
+  }
+
+  .featured-action-panel p,
+  .platform-card.featured h3,
+  .platform-card.featured .platform-subtitle {
+    text-align: center;
+  }
+
+  .featured-chain-strip {
+    justify-content: center;
+  }
+
+  .platform-card.featured .featured-signup-button {
+    width: 100%;
+    min-width: 0;
+  }
+}

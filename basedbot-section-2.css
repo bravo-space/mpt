@@ -1,0 +1,361 @@
+/*
+  BasedBot section #2 snapshot.
+  Saved reference of the compact signal-panel design.
+  Load this after styles.css to restore that section style.
+*/
+
+.platform-card.featured {
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 2.15fr) minmax(
+      210px,
+      0.62fr
+    );
+  grid-template-areas: "brand highlights action";
+  align-items: stretch;
+  justify-items: stretch;
+  gap: 0.55rem;
+  min-height: 0;
+  padding: 0.68rem;
+  scroll-margin-top: 6rem;
+  text-align: left;
+  isolation: isolate;
+  border-color: rgba(70, 244, 213, 0.46);
+  background:
+    radial-gradient(
+      circle at 4% 24%,
+      rgba(255, 224, 79, 0.17),
+      transparent 14rem
+    ),
+    radial-gradient(
+      circle at 96% 12%,
+      rgba(255, 111, 97, 0.13),
+      transparent 12rem
+    ),
+    linear-gradient(112deg, rgba(70, 244, 213, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(125, 255, 104, 0.08), rgba(2, 4, 2, 0.91)),
+    #020402;
+  box-shadow:
+    inset 0 0 0 1px rgba(244, 248, 238, 0.08),
+    0 18px 54px rgba(0, 0, 0, 0.22);
+}
+
+.platform-card.featured:hover {
+  border-color: rgba(125, 255, 104, 0.58);
+  background:
+    radial-gradient(
+      circle at 4% 24%,
+      rgba(255, 224, 79, 0.2),
+      transparent 14rem
+    ),
+    radial-gradient(
+      circle at 96% 12%,
+      rgba(255, 111, 97, 0.16),
+      transparent 12rem
+    ),
+    linear-gradient(112deg, rgba(70, 244, 213, 0.2), transparent 34%),
+    linear-gradient(180deg, rgba(125, 255, 104, 0.1), rgba(2, 4, 2, 0.91)),
+    #020402;
+}
+
+.platform-card.featured::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.66;
+  background:
+    linear-gradient(
+      95deg,
+      transparent 17%,
+      rgba(244, 248, 238, 0.11) 48%,
+      transparent 71%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(70, 244, 213, 0.09) 0 1px,
+      transparent 1px 9px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 224, 79, 0.07) 0 1px,
+      transparent 1px 74px
+    );
+  background-size:
+    220% 100%,
+    100% 100%,
+    100% 100%;
+  animation: featured-signal-field 7s linear infinite;
+}
+
+.platform-card.featured::after {
+  content: "";
+  position: absolute;
+  inset: 0.55rem;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(70, 244, 213, 0.18);
+  opacity: 0.58;
+  animation: featured-frame-pulse 4s ease-in-out infinite;
+}
+
+.featured-signal-rails {
+  top: 0.48rem;
+  right: 0.62rem;
+  z-index: 2;
+  gap: 0.18rem;
+  width: 5.2rem;
+}
+
+.featured-signal-rails span {
+  animation: featured-rail-scan 2.55s ease-in-out infinite;
+}
+
+.platform-card.featured .featured-brand {
+  grid-area: brand;
+  grid-column: auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  justify-content: start;
+  gap: 0.66rem;
+  min-width: 0;
+  padding: 0.34rem 0.52rem 0.34rem 0.14rem;
+  background: linear-gradient(90deg, rgba(70, 244, 213, 0.1), transparent);
+  box-shadow: inset -1px 0 rgba(70, 244, 213, 0.2);
+}
+
+.featured-logo-lockup {
+  width: 4.75rem;
+  padding-top: 0.5rem;
+}
+
+.featured-logo-link {
+  width: 4.75rem;
+  height: 4.75rem;
+}
+
+.featured-mini-crown {
+  width: 2.95rem;
+  height: 1.25rem;
+}
+
+.featured-kicker {
+  gap: 0.28rem;
+  margin: 0 0 0.28rem;
+  font-size: 0.66rem;
+}
+
+.featured-kicker span {
+  padding: 0.23rem 0.34rem;
+}
+
+.platform-card.featured h3 {
+  justify-content: flex-start;
+  margin: 0;
+  font-size: 2rem;
+  line-height: 0.98;
+  text-align: left;
+}
+
+.platform-card.featured .platform-subtitle {
+  margin: 0.26rem 0 0;
+  color: #eef9ea;
+  font-size: 0.94rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.platform-card.featured .featured-highlights {
+  grid-area: highlights;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-content: stretch;
+  justify-items: stretch;
+  gap: 0.32rem;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.platform-card.featured .featured-highlights li {
+  width: auto;
+  min-height: 3.45rem;
+  padding: 0.48rem 0.48rem 0.46rem;
+  border: 1px solid rgba(244, 248, 238, 0.12);
+  border-top: 2px solid rgba(70, 244, 213, 0.82);
+  border-radius: 6px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(244, 248, 238, 0.06),
+      rgba(244, 248, 238, 0.015)
+    ),
+    rgba(3, 4, 3, 0.42);
+  overflow: hidden;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.platform-card.featured .featured-highlights strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.84rem;
+  line-height: 1.1;
+}
+
+.platform-card.featured .featured-highlights span {
+  display: block;
+  margin-top: 0.22rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.24;
+  text-align: left;
+}
+
+.platform-card.featured .featured-action-panel {
+  grid-area: action;
+  grid-column: auto;
+  display: grid;
+  align-content: space-between;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.34rem 0 0.34rem 0.66rem;
+  border-left: 1px solid rgba(70, 244, 213, 0.24);
+  background: linear-gradient(90deg, rgba(125, 255, 104, 0.07), transparent);
+}
+
+.featured-action-panel p {
+  margin: 0;
+  color: var(--cyan);
+  font-size: 0.68rem;
+  font-weight: 950;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.featured-chain-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+}
+
+.featured-chain-strip span {
+  min-height: 1.72rem;
+  padding: 0.28rem 0.4rem;
+  font-size: 0.73rem;
+  animation: featured-chain-idle 4s ease-in-out infinite;
+}
+
+.platform-card.featured .featured-chain-strip span:last-child {
+  color: #e9ffe8;
+  background: rgba(125, 255, 104, 0.06);
+  border-color: rgba(125, 255, 104, 0.22);
+}
+
+.platform-card.featured .featured-signup-button {
+  width: 100%;
+  min-height: 40px;
+  margin-top: 0.04rem;
+  padding: 0.52rem 0.72rem;
+  box-shadow: 0 10px 24px rgba(125, 255, 104, 0.16);
+  animation: featured-button-pulse 3.6s ease-in-out infinite;
+}
+
+@media (max-width: 1180px) {
+  .platform-card.featured {
+    grid-template-columns: minmax(235px, 0.78fr) minmax(220px, 0.72fr);
+    grid-template-areas:
+      "brand action"
+      "highlights highlights";
+    gap: 0.6rem;
+  }
+
+  .platform-card.featured .featured-highlights {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .platform-card.featured {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "highlights"
+      "action";
+    gap: 0.62rem;
+  }
+
+  .platform-card.featured .featured-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .platform-card.featured .featured-action-panel {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    align-content: center;
+    padding-top: 0.56rem;
+    padding-left: 0;
+    padding-bottom: 0;
+    border-top: 1px solid rgba(70, 244, 213, 0.24);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .platform-card.featured {
+    padding: 0.66rem;
+    scroll-margin-top: 10rem;
+  }
+
+  .featured-signal-rails {
+    display: none;
+  }
+
+  .platform-card.featured .featured-brand {
+    grid-template-columns: auto minmax(0, 1fr);
+    justify-items: start;
+    gap: 0.58rem;
+    padding: 0.16rem 0.24rem 0.3rem 0;
+    text-align: left;
+  }
+
+  .featured-logo-lockup,
+  .featured-logo-link {
+    width: 4.35rem;
+  }
+
+  .featured-logo-link {
+    height: 4.35rem;
+  }
+
+  .featured-mini-crown {
+    width: 2.75rem;
+  }
+
+  .platform-card.featured h3 {
+    justify-content: flex-start;
+    font-size: 1.82rem;
+    text-align: left;
+  }
+
+  .platform-card.featured .platform-subtitle {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .platform-card.featured .featured-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.34rem;
+  }
+
+  .platform-card.featured .featured-highlights li {
+    min-height: 3.25rem;
+    padding: 0.46rem 0.44rem;
+  }
+
+  .platform-card.featured .featured-signup-button {
+    width: 100%;
+    min-width: 0;
+  }
+}

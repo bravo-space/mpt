@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 956 720" role="img" aria-labelledby="title desc">
+  <title id="title">Crypto trader dashboard with Ethereum badge alternative two</title>
+  <desc id="desc">A neon trading dashboard image with a magenta Ethereum-style hologram replacing the Bitcoin badge area.</desc>
+  <defs>
+    <linearGradient id="badgeGradB" x1="20%" y1="5%" x2="88%" y2="94%">
+      <stop offset="0" stop-color="#ff5ea8" stop-opacity="0.96"/>
+      <stop offset="0.48" stop-color="#11130f" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#7dff68" stop-opacity="0.82"/>
+    </linearGradient>
+    <filter id="softGlowB" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 1 0 0 0 0 0.369 0 0 0 0 0.659 0 0 0 0.82 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <image href="crypto-trader.jpg" x="0" y="0" width="956" height="720" preserveAspectRatio="xMidYMid slice"/>
+  <ellipse cx="246" cy="130" rx="142" ry="124" fill="#050604" opacity="0.96"/>
+  <path d="M146 130c0-55 44-99 100-99s100 44 100 99-44 99-100 99-100-44-100-99Z" fill="url(#badgeGradB)" opacity="0.88"/>
+  <path d="M163 130c0-45 36-82 83-82s83 37 83 82-36 82-83 82-83-37-83-82Z" fill="#040606" opacity="0.62"/>
+  <g filter="url(#softGlowB)" transform="translate(246 130) rotate(-8) scale(1.12)">
+    <polygon points="0,-62 -42,6 0,-16 42,6" fill="#f4f8ee"/>
+    <polygon points="0,-62 42,6 0,-16" fill="#ffb7d7"/>
+    <polygon points="0,-8 -42,15 0,61 42,15" fill="#ff5ea8"/>
+    <polygon points="0,-8 42,15 0,61" fill="#7dff68" opacity="0.9"/>
+    <line x1="-48" y1="74" x2="48" y2="74" stroke="#46f4d5" stroke-width="5" stroke-linecap="round" opacity="0.74"/>
+  </g>
+</svg>
